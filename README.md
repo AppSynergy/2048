@@ -1,4 +1,13 @@
-# 2048
+# 2048AI
+
+This version of the game plays itself.
+No user input is required.
+It's not very good, but it's not much worse than when I play manually.
+It's much quicker than me.
+It doesn't make any mistakes (because it doesn't know what a mistake is).
+
+## 2048
+
 A small clone of [1024](https://play.google.com/store/apps/details?id=com.veewo.a1024), based on [Saming's 2048](http://saming.fr/p/2048/) (also a clone).
 
 Made just for fun. [Play it here!](http://gabrielecirulli.github.io/2048/)

@@ -9,7 +9,14 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
   this.inputManager.on("keepPlaying", this.keepPlaying.bind(this));
-
+  
+  // hack in some AI
+  this.notStuck = true;
+  this.flipFlop = true;
+  this.stopFlag = false;
+  this.problemCounter = 0;
+  this.runAI();
+  
   this.setup();
 }
 
@@ -188,10 +195,12 @@ GameManager.prototype.move = function (direction) {
 
     if (!this.movesAvailable()) {
       this.over = true; // Game over!
+	  return false;
     }
-
     this.actuate();
+	return true;
   }
+  return false;
 };
 
 // Get the vector representing the chosen direction
